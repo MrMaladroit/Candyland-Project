@@ -18,18 +18,25 @@ public class MoveCalculator : MonoBehaviour
 
     private void CalculateMove(TileType tileType, int singleOrDouble)
     {
-        int moveQueueIndex = 0;
+        int moveCount = 0;
         Tile nextTile = player.CurrentTile.NextTile;
-        bool isFinalTile;       
+
         for (int i = 0; i < singleOrDouble;)
         {
-            isFinalTile = nextTile.tileType == tileType;
-            if(isFinalTile)
+            moveCount++;
+            if (nextTile.tileType == tileType)
             {
                 i++;
             }
             nextTile = nextTile.NextTile;
-            moveQueueIndex++;
+        }
+        moveQueue =  new Tile[moveCount];
+
+        nextTile = player.CurrentTile.NextTile;
+        for(int i = 0; i < moveCount; i++)
+        {
+            moveQueue[i] = nextTile;
+            nextTile = nextTile.NextTile;
         }
 
         MoveCalculated(moveQueue);

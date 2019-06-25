@@ -35,6 +35,6 @@ public class SpinnerController : MonoBehaviour
 
     public void Move()
     {
-        OnSpinnerResults(TileType.Red, 1);
+        OnSpinnerResults(TileType.Yellow, 1);
     }
 }

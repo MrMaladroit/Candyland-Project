@@ -42,8 +42,16 @@ public class PieceMover : MonoBehaviour
             transform.position = Vector2.SmoothDamp(transform.position, player.CurrentTile.NextTile.transform.position, ref velocity, smoothTime);
             yield return null;
         }
+
         isMoving = false;
         OnMoveFinished();
         StopCoroutine(MovePiece(moveQueue));
     }
 }
+
+
+/*
+ * need to set nextTile variable for better tile checking
+ * fix setting player's new current tile setter
+ * piece moves two spaces at a time so I have the nexttile logic messed up
+ */ 
