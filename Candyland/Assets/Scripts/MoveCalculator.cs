@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MoveCalculator : MonoBehaviour
 {
+    public static Action<Tile[]> MoveCalculated;
     private Tile[] moveQueue;
     private Player player;
     private Board board;
@@ -10,25 +11,28 @@ public class MoveCalculator : MonoBehaviour
     private void Start()
     {
         SpinnerController.OnSpinnerResults += CalculateMove;
+        PieceMover.OnMoveFinished += ClearMoveQueue;
         player = GetComponent<Player>();
         board = FindObjectOfType<Board>();
     }
 
-    private void CalculateMove(TileType tileType, int singleOrSingle)
+    private void CalculateMove(TileType tileType, int singleOrDouble)
     {
         int moveQueueIndex = 0;
         Tile nextTile = player.CurrentTile.NextTile;
-        bool isFinalTile;
-        for (int i = 1; i <= singleOrSingle; i++)
+        bool isFinalTile;       
+        for (int i = 0; i < singleOrDouble;)
         {
-            do
+            isFinalTile = nextTile.tileType == tileType;
+            if(isFinalTile)
             {
-                moveQueue[moveQueueIndex] = nextTile;
-                isFinalTile = moveQueue[moveQueueIndex].tileType == tileType;
-                nextTile = board.boardTiles[Array.IndexOf(board.boardTiles, player.CurrentTile.NextTile) + 1];
-                moveQueueIndex++;
-            } while (isFinalTile != true);
+                i++;
+            }
+            nextTile = nextTile.NextTile;
+            moveQueueIndex++;
         }
+
+        MoveCalculated(moveQueue);
     }
 
     public void ClearMoveQueue()
@@ -41,3 +45,17 @@ public class MoveCalculator : MonoBehaviour
         return moveQueue;
     }
 }
+
+
+
+
+/*
+ * currentTile index in board
+ * new array length will number of moves
+ * count the amount of tiles between currentTile and final tile.
+ * for every next tile that isn't the result increment counter
+ * once you've reached the final tile stop counting
+ * for the number of moves add to the move queue the next tiles.
+ * send off movequeue
+ * 
+ */
