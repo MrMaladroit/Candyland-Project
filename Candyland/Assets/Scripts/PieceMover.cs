@@ -29,20 +29,24 @@ public class PieceMover : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Tile>() != null)
+        {
+            player.CurrentTile = player.CurrentTile.NextTile.NextTile;
+        }
+    }
+
     private IEnumerator MovePiece(Tile[] moveQueue)
     {
         isMoving = true;
         Tile finalTile = moveQueue[moveQueue.Length - 1];
-        while (Vector2.Distance(transform.position, finalTile.transform.position) > 0.01f)
+        while (player.CurrentTile != finalTile)
         {
-            if(Vector2.Distance(transform.position, player.CurrentTile.NextTile.transform.position) < 0.01f)
-            {
-                player.CurrentTile = player.CurrentTile.NextTile.NextTile;
-            }
             transform.position = Vector2.SmoothDamp(transform.position, player.CurrentTile.NextTile.transform.position, ref velocity, smoothTime);
             yield return null;
         }
-
+        transform.position = finalTile.transform.position;
         isMoving = false;
         OnMoveFinished();
         StopCoroutine(MovePiece(moveQueue));
