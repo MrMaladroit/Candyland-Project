@@ -268,7 +268,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 923093342}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1352308601}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3135,7 +3135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845114866
 GameObject:
@@ -3146,7 +3146,6 @@ GameObject:
   m_Component:
   - component: {fileID: 845114869}
   - component: {fileID: 845114868}
-  - component: {fileID: 845114867}
   m_Layer: 0
   m_Name: Spinner GFX
   m_TagString: Untagged
@@ -3154,21 +3153,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &845114867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 845114866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20f6bb3b2a8dfd541a601035e7f3e8f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minAmountOfSpins: 2
-  maxAmountOfSpins: 7
-  targetRotation: 90
-  spinSpeed: 100
 --- !u!212 &845114868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3725,7 +3709,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 845114867}
+      - m_Target: {fileID: 1352308602}
         m_MethodName: Move
         m_Mode: 1
         m_Arguments:
@@ -5585,6 +5569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352308601}
+  - component: {fileID: 1352308602}
   m_Layer: 0
   m_Name: Spinner Wheel
   m_TagString: Untagged
@@ -5604,9 +5589,27 @@ Transform:
   m_Children:
   - {fileID: 1379418470}
   - {fileID: 845114869}
+  - {fileID: 28058997}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1352308602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1352308600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f6bb3b2a8dfd541a601035e7f3e8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MOVETESTTILETYPE: 6
+  MOVETESTSINGLEORDOUBLE: 10
+  minAmountOfSpins: 2
+  maxAmountOfSpins: 7
+  targetRotation: 90
+  spinSpeed: 5
 --- !u!114 &1367117790 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114200829310344808, guid: ea27cf5585fe35341b8f0978bec0ca2d,
@@ -6756,7 +6759,7 @@ Transform:
   m_Children:
   - {fileID: 857217693}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1663010823
 MonoBehaviour:
@@ -6769,7 +6772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e41059f6b14cf94ba7505ee5a04347b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 0.2
+  smoothTime: 0.1
   smoothDistance: 0.1
 --- !u!50 &1663010824
 Rigidbody2D:
@@ -8380,7 +8383,7 @@ Transform:
   - {fileID: 1036062188}
   - {fileID: 959788040}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2068262813
 MonoBehaviour:

@@ -24,12 +24,19 @@ public class MoveCalculator : MonoBehaviour
         for (int i = 0; i < singleOrDouble;)
         {
             moveCount++;
-            if (nextTile.tileType == tileType)
+
+            if(nextTile.tileType == TileType.End)
+            {
+                break;
+            }
+            else if (nextTile.tileType == tileType)
             {
                 i++;
             }
+
             nextTile = nextTile.NextTile;
         }
+
         moveQueue =  new Tile[moveCount];
 
         nextTile = player.CurrentTile.NextTile;
@@ -52,17 +59,3 @@ public class MoveCalculator : MonoBehaviour
         return moveQueue;
     }
 }
-
-
-
-
-/*
- * currentTile index in board
- * new array length will number of moves
- * count the amount of tiles between currentTile and final tile.
- * for every next tile that isn't the result increment counter
- * once you've reached the final tile stop counting
- * for the number of moves add to the move queue the next tiles.
- * send off movequeue
- * 
- */

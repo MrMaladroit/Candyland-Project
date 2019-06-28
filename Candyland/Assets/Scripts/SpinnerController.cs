@@ -3,6 +3,8 @@ using System;
 
 public class SpinnerController : MonoBehaviour
 {
+    public TileType MOVETESTTILETYPE = TileType.Blue;
+    public int MOVETESTSINGLEORDOUBLE = 1;
     [SerializeField] private int minAmountOfSpins = 2;
     [SerializeField] private int maxAmountOfSpins = 7;
     [SerializeField] private int targetRotation = 90;
@@ -35,6 +37,6 @@ public class SpinnerController : MonoBehaviour
 
     public void Move()
     {
-        OnSpinnerResults(TileType.Yellow, 1);
+        OnSpinnerResults(MOVETESTTILETYPE, MOVETESTSINGLEORDOUBLE);
     }
 }

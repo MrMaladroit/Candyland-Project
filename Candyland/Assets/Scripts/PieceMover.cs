@@ -29,33 +29,30 @@ public class PieceMover : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Tile>() != null)
-        {
-            player.CurrentTile = player.CurrentTile.NextTile.NextTile;
-        }
-    }
-
     private IEnumerator MovePiece(Tile[] moveQueue)
     {
         isMoving = true;
         Tile finalTile = moveQueue[moveQueue.Length - 1];
         while (player.CurrentTile != finalTile)
         {
+            if(Vector2.Distance(transform.position, player.CurrentTile.NextTile.transform.position) < 0.01f)
+            {
+                player.CurrentTile = player.CurrentTile.NextTile;
+            }
+
             transform.position = Vector2.SmoothDamp(transform.position, player.CurrentTile.NextTile.transform.position, ref velocity, smoothTime);
             yield return null;
         }
-        transform.position = finalTile.transform.position;
         isMoving = false;
         OnMoveFinished();
-        StopCoroutine(MovePiece(moveQueue));
     }
 }
 
 
 /*
- * need to set nextTile variable for better tile checking
- * fix setting player's new current tile setter
- * piece moves two spaces at a time so I have the nexttile logic messed up
+ * Need to set up movement for choclate bridge and gummy bridge
+ * Need to add functions for moving to special item tiles like ice cream, cupcake, hard candy, and peanut
+ * Need to add event for landing on lose a turn space.
+ * 
+ * LOOKOUT FOR OBJECT REFERENCE NOT SET TO AN INSTANCE OF AN OBJECT WHEN PLAYER REACHES END TILE.
  */ 
