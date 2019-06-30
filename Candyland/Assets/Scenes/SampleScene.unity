@@ -1045,6 +1045,16 @@ Prefab:
       propertyPath: m_Name
       value: Purple Tile (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: secondaryNextTile
+      value: 
+      objectReference: {fileID: 599670349}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: isSpecialTile
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d07a1883fad35d44b84de64f6aa1fd2, type: 2}
   m_IsPrefabAsset: 0
@@ -1751,6 +1761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryNextTile: {fileID: 0}
   secondaryNextTile: {fileID: 0}
+  isSpecialTile: 0
   tileType: 0
 --- !u!4 &426814367
 Transform:
@@ -4695,6 +4706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   primaryNextTile: {fileID: 0}
   secondaryNextTile: {fileID: 0}
+  isSpecialTile: 0
   tileType: 7
 --- !u!58 &1081726069
 CircleCollider2D:
@@ -5604,8 +5616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f6bb3b2a8dfd541a601035e7f3e8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOVETESTTILETYPE: 6
-  MOVETESTSINGLEORDOUBLE: 10
+  MOVETESTTILETYPE: 3
+  MOVETESTSINGLEORDOUBLE: 1
   minAmountOfSpins: 2
   maxAmountOfSpins: 7
   targetRotation: 90
@@ -6774,6 +6786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothTime: 0.1
   smoothDistance: 0.1
+  currentTile: {fileID: 426814366}
 --- !u!50 &1663010824
 Rigidbody2D:
   serializedVersion: 4
@@ -6805,7 +6818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbed03eac5e11f84ebdb16dac06348f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentTile: {fileID: 426814366}
+  IsHuman: 0
 --- !u!114 &1663010826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8635,6 +8648,11 @@ Prefab:
       propertyPath: secondaryNextTile
       value: 
       objectReference: {fileID: 1454276607}
+    - target: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
+        type: 2}
+      propertyPath: isSpecialTile
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9e701995020ea74f812c58693efd70e, type: 2}
   m_IsPrefabAsset: 0
