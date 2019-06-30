@@ -5,21 +5,21 @@ public class MoveCalculator : MonoBehaviour
 {
     public static Action<Tile[]> MoveCalculated;
     private Tile[] moveQueue;
-    private Player player;
+    private PieceMover pieceMover;
     private Board board;
 
     private void Start()
     {
         SpinnerController.OnSpinnerResults += CalculateMove;
         PieceMover.OnMoveFinished += ClearMoveQueue;
-        player = GetComponent<Player>();
+        pieceMover = GetComponent<PieceMover>();
         board = FindObjectOfType<Board>();
     }
 
     private void CalculateMove(TileType tileType, int singleOrDouble)
     {
         int moveCount = 0;
-        Tile nextTile = player.CurrentTile.NextTile;
+        Tile nextTile = pieceMover.CurrentTile.NextTile;
 
         for (int i = 0; i < singleOrDouble;)
         {
@@ -39,7 +39,7 @@ public class MoveCalculator : MonoBehaviour
 
         moveQueue =  new Tile[moveCount];
 
-        nextTile = player.CurrentTile.NextTile;
+        nextTile = pieceMover.CurrentTile.NextTile;
         for(int i = 0; i < moveCount; i++)
         {
             moveQueue[i] = nextTile;

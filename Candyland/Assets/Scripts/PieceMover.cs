@@ -5,19 +5,19 @@ using System.Collections;
 public class PieceMover : MonoBehaviour
 {
     public static Action OnMoveFinished;
+    public Tile CurrentTile { get { return currentTile; } private set { currentTile = value; } }
     [SerializeField] float smoothTime = 0.2f;
     [SerializeField] private float smoothDistance = 0.1f;
+    [SerializeField] private Tile currentTile;
     private Transform currentTransform;
-    private Player player;
     private MoveCalculator moveCalculator;
     private bool isMoving = false;
     private Vector2 velocity;
 
     private void Start()
-    {
-        player = GetComponent<Player>();
+    {        
         MoveCalculator.MoveCalculated += HandleMove;
-        transform.position = player.CurrentTile.transform.position;
+        transform.position = currentTile.transform.position;
         moveCalculator = GetComponent<MoveCalculator>();
     }
 
@@ -33,14 +33,14 @@ public class PieceMover : MonoBehaviour
     {
         isMoving = true;
         Tile finalTile = moveQueue[moveQueue.Length - 1];
-        while (player.CurrentTile != finalTile)
+        while (currentTile != finalTile)
         {
-            if(Vector2.Distance(transform.position, player.CurrentTile.NextTile.transform.position) < 0.01f)
+            if(Vector2.Distance(transform.position, currentTile.NextTile.transform.position) < 0.01f)
             {
-                player.CurrentTile = player.CurrentTile.NextTile;
+                currentTile = currentTile.NextTile;
             }
 
-            transform.position = Vector2.SmoothDamp(transform.position, player.CurrentTile.NextTile.transform.position, ref velocity, smoothTime);
+            transform.position = Vector2.SmoothDamp(transform.position, currentTile.NextTile.transform.position, ref velocity, smoothTime);
             yield return null;
         }
         isMoving = false;
