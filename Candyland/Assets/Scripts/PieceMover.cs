@@ -43,7 +43,16 @@ public class PieceMover : MonoBehaviour
             transform.position = Vector2.SmoothDamp(transform.position, currentTile.NextTile.transform.position, ref velocity, smoothTime);
             yield return null;
         }
+
         isMoving = false;
+
+        if(finalTile.HasSpecialAction)
+        {
+            currentTile = currentTile.SecondaryNextTile;
+            moveCalculator.ClearMoveQueue();
+            moveQueue = finalTile.shortcutRoute;
+            HandleMove(moveQueue);
+        }
         OnMoveFinished();
     }
 }

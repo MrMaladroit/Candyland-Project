@@ -25,7 +25,7 @@ public class MoveCalculator : MonoBehaviour
         {
             moveCount++;
 
-            if(nextTile.tileType == TileType.End)
+            if (nextTile.tileType == TileType.End)
             {
                 break;
             }
@@ -37,10 +37,10 @@ public class MoveCalculator : MonoBehaviour
             nextTile = nextTile.NextTile;
         }
 
-        moveQueue =  new Tile[moveCount];
+        moveQueue = new Tile[moveCount];
 
         nextTile = pieceMover.CurrentTile.NextTile;
-        for(int i = 0; i < moveCount; i++)
+        for (int i = 0; i < moveCount; i++)
         {
             moveQueue[i] = nextTile;
             nextTile = nextTile.NextTile;
