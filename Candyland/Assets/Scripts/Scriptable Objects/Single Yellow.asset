@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 581a2d23968db7b41970636948ffc25b, type: 3}
-  m_Name: New Card 13
+  m_Name: Single Yellow
   m_EditorClassIdentifier: 
   cardImage: {fileID: 0}
-  TileType: 0
+  TileType: 3
   IsDouble: 0
