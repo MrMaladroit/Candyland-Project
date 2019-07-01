@@ -6,9 +6,11 @@ public class PieceMover : MonoBehaviour
 {
     public static Action OnMoveFinished;
     public Tile CurrentTile { get { return currentTile; } private set { currentTile = value; } }
+
     [SerializeField] float smoothTime = 0.2f;
     [SerializeField] private float smoothDistance = 0.1f;
     [SerializeField] private Tile currentTile;
+
     private Transform currentTransform;
     private MoveCalculator moveCalculator;
     private bool isMoving = false;

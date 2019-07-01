@@ -10,7 +10,7 @@
     IceCream,
     HardCandy,
     CandyCane,
-    Cupcakem,
+    Cupcake,
     Shortcut,
     End
 }

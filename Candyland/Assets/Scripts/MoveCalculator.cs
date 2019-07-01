@@ -4,6 +4,7 @@ using UnityEngine;
 public class MoveCalculator : MonoBehaviour
 {
     public static Action<Tile[]> MoveCalculated;
+
     private Tile[] moveQueue;
     private PieceMover pieceMover;
     private Board board;

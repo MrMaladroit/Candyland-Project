@@ -29,11 +29,9 @@ public class Tile : MonoBehaviour
             }        
         }
 
-
         hasSpecialAction = secondaryNextTile == null ? false : true;
         PieceMover.OnMoveFinished += HandleSpecialTile;
    }
-
 
     private void HandleSpecialTile()
     {

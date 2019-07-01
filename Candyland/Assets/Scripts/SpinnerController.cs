@@ -3,19 +3,23 @@ using System;
 
 public class SpinnerController : MonoBehaviour
 {
+#if (UNITY_EDITOR)
     public TileType MOVETESTTILETYPE = TileType.Blue;
     public int MOVETESTSINGLEORDOUBLE = 1;
+#endif
+
+    public static event Action<TileType, int> OnSpinnerResults;
+
     [SerializeField] private int minAmountOfSpins = 2;
     [SerializeField] private int maxAmountOfSpins = 7;
     [SerializeField] private int targetRotation = 90;
     [SerializeField] private float spinSpeed = 5f;
+
     private Transform rotation;
     private int totalDegrees = 0;
     private float newRotationClamped = 0f;
     private float newRotation = 0f;
     private TileType tileType;
-
-    public static event Action<TileType, int> OnSpinnerResults;
 
     private void Awake()
     {

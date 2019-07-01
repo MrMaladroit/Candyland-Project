@@ -3,5 +3,4 @@
 public class Board : MonoBehaviour
 {
     public Tile[] boardTiles;
-
 }

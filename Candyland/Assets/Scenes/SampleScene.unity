@@ -1009,6 +1009,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 959788040}
     m_Modifications:
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4841278825532920, guid: 8d07a1883fad35d44b84de64f6aa1fd2, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.64
@@ -1039,7 +1044,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4841278825532920, guid: 8d07a1883fad35d44b84de64f6aa1fd2, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1892931652938716, guid: 8d07a1883fad35d44b84de64f6aa1fd2, type: 2}
       propertyPath: m_Name
@@ -1049,12 +1054,47 @@ Prefab:
         type: 2}
       propertyPath: secondaryNextTile
       value: 
-      objectReference: {fileID: 599670349}
+      objectReference: {fileID: 1698938841}
     - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
         type: 2}
       propertyPath: isSpecialTile
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[0]
+      value: 
+      objectReference: {fileID: 1698938841}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[1]
+      value: 
+      objectReference: {fileID: 1013884861}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[2]
+      value: 
+      objectReference: {fileID: 1317857393}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[3]
+      value: 
+      objectReference: {fileID: 307501422}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[4]
+      value: 
+      objectReference: {fileID: 1333669356}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[5]
+      value: 
+      objectReference: {fileID: 286109416}
+    - target: {fileID: 114299170347301734, guid: 8d07a1883fad35d44b84de64f6aa1fd2,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[6]
+      value: 
+      objectReference: {fileID: 507925425}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d07a1883fad35d44b84de64f6aa1fd2, type: 2}
   m_IsPrefabAsset: 0
@@ -1399,6 +1439,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4543826398864890, guid: 9c522e1cfe61bd5479aca45639df294b,
     type: 2}
   m_PrefabInternal: {fileID: 284313833}
+--- !u!1 &286109414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286109415}
+  - component: {fileID: 286109416}
+  m_Layer: 0
+  m_Name: Shortcut End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286109415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286109414}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.086, y: 1.399, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 215269413}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &286109416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286109414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 507925425}
+  secondaryNextTile: {fileID: 0}
 --- !u!114 &288644783 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114469469251125336, guid: 9c522e1cfe61bd5479aca45639df294b,
@@ -1411,6 +1495,50 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1726074959}
   m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+--- !u!1 &307501420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307501421}
+  - component: {fileID: 307501422}
+  m_Layer: 0
+  m_Name: Shortcut Road Mid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &307501421
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 307501420}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.467, y: 0.841, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 215269413}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307501422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 307501420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 1333669356}
+  secondaryNextTile: {fileID: 0}
 --- !u!114 &307773927 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114469469251125336, guid: 9c522e1cfe61bd5479aca45639df294b,
@@ -1759,10 +1887,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileType: 0
+  shortcutRoute: []
   primaryNextTile: {fileID: 0}
   secondaryNextTile: {fileID: 0}
-  isSpecialTile: 0
-  tileType: 0
 --- !u!4 &426814367
 Transform:
   m_ObjectHideFlags: 0
@@ -2724,7 +2852,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4841278825532920, guid: 8d07a1883fad35d44b84de64f6aa1fd2, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1892931652938716, guid: 8d07a1883fad35d44b84de64f6aa1fd2, type: 2}
       propertyPath: m_Name
@@ -3818,6 +3946,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4748005089823326, guid: ea27cf5585fe35341b8f0978bec0ca2d,
     type: 2}
   m_PrefabInternal: {fileID: 928602001}
+--- !u!1 &928743776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 928743777}
+  - component: {fileID: 928743778}
+  m_Layer: 0
+  m_Name: Shortcut Mid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &928743777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 928743776}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.116, y: 0.466, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2073998794}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &928743778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 928743776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 1666362601}
+  secondaryNextTile: {fileID: 0}
 --- !u!114 &936724557 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114469469251125336, guid: 9c522e1cfe61bd5479aca45639df294b,
@@ -3920,13 +4092,13 @@ Transform:
   - {fileID: 922161930}
   - {fileID: 1250387455}
   - {fileID: 1035382273}
-  - {fileID: 727481649}
+  - {fileID: 215269413}
   - {fileID: 157692232}
   - {fileID: 273040755}
   - {fileID: 2071516318}
   - {fileID: 107015712}
   - {fileID: 1065421850}
-  - {fileID: 215269413}
+  - {fileID: 727481649}
   - {fileID: 234393492}
   - {fileID: 1113083692}
   - {fileID: 1310085973}
@@ -4213,6 +4385,50 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2110186397}
   m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+--- !u!1 &1013884859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013884860}
+  - component: {fileID: 1013884861}
+  m_Layer: 0
+  m_Name: Shortcut Road Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1013884860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1013884859}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.279, y: 0.312, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 215269413}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1013884861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1013884859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 1317857393}
+  secondaryNextTile: {fileID: 0}
 --- !u!1001 &1018073603
 Prefab:
   m_ObjectHideFlags: 0
@@ -4704,10 +4920,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileType: 12
+  shortcutRoute: []
   primaryNextTile: {fileID: 0}
   secondaryNextTile: {fileID: 0}
-  isSpecialTile: 0
-  tileType: 7
 --- !u!58 &1081726069
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5510,6 +5726,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4064610794024038, guid: 4a62ebc9a433ff8468db4bd9cbd29015,
     type: 2}
   m_PrefabInternal: {fileID: 1317258370}
+--- !u!1 &1317857391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317857392}
+  - component: {fileID: 1317857393}
+  m_Layer: 0
+  m_Name: 'Shortcut Road '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1317857392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1317857391}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.382, y: 0.542, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 215269413}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317857393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1317857391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 307501422}
+  secondaryNextTile: {fileID: 0}
 --- !u!1001 &1319720126
 Prefab:
   m_ObjectHideFlags: 0
@@ -5567,6 +5827,50 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 417573250}
   m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+--- !u!1 &1333669354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333669355}
+  - component: {fileID: 1333669356}
+  m_Layer: 0
+  m_Name: Shortcut Road
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1333669355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1333669354}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.385, y: 1.152, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 215269413}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333669356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1333669354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 286109416}
+  secondaryNextTile: {fileID: 0}
 --- !u!114 &1338136156 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114228382577387478, guid: 4a62ebc9a433ff8468db4bd9cbd29015,
@@ -6748,9 +7052,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1663010822}
-  - component: {fileID: 1663010823}
   - component: {fileID: 1663010824}
   - component: {fileID: 1663010826}
+  - component: {fileID: 1663010823}
   - component: {fileID: 1663010825}
   m_Layer: 0
   m_Name: Player 1
@@ -6830,6 +7134,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a0de5f692f6d445b430fda6e283b67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1666362599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666362600}
+  - component: {fileID: 1666362601}
+  m_Layer: 0
+  m_Name: Shortcut End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666362600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666362599}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.287, y: 0.806, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2073998794}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1666362601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666362599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 1854875173}
+  secondaryNextTile: {fileID: 0}
 --- !u!1001 &1668292075
 Prefab:
   m_ObjectHideFlags: 0
@@ -7046,6 +7394,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4064610794024038, guid: 4a62ebc9a433ff8468db4bd9cbd29015,
     type: 2}
   m_PrefabInternal: {fileID: 1696659495}
+--- !u!1 &1698938839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1698938840}
+  - component: {fileID: 1698938841}
+  m_Layer: 0
+  m_Name: Shortcut Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1698938840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698938839}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 215269413}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698938841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698938839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 1013884861}
+  secondaryNextTile: {fileID: 0}
 --- !u!114 &1699738064 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
@@ -7756,6 +8148,50 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1581832482}
   m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+--- !u!1 &1882132376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882132377}
+  - component: {fileID: 1882132378}
+  m_Layer: 0
+  m_Name: Shortcut Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882132377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882132376}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.032, y: -0.044, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2073998794}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1882132378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882132376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886bc117a4dcdd64ba446d4046cbe67a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileType: 11
+  shortcutRoute: []
+  primaryNextTile: {fileID: 928743778}
+  secondaryNextTile: {fileID: 0}
 --- !u!1001 &1883848413
 Prefab:
   m_ObjectHideFlags: 0
@@ -8607,6 +9043,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 959788040}
     m_Modifications:
+    - target: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
+        type: 2}
+      propertyPath: shortcutRoute.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4276628511805616, guid: c9e701995020ea74f812c58693efd70e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.72
@@ -8647,12 +9088,32 @@ Prefab:
         type: 2}
       propertyPath: secondaryNextTile
       value: 
-      objectReference: {fileID: 1454276607}
+      objectReference: {fileID: 1882132378}
     - target: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
         type: 2}
       propertyPath: isSpecialTile
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[0]
+      value: 
+      objectReference: {fileID: 928743778}
+    - target: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[1]
+      value: 
+      objectReference: {fileID: 1666362601}
+    - target: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[2]
+      value: 
+      objectReference: {fileID: 1854875173}
+    - target: {fileID: 114058349855612170, guid: c9e701995020ea74f812c58693efd70e,
+        type: 2}
+      propertyPath: shortcutRoute.Array.data[3]
+      value: 
+      objectReference: {fileID: 1854875173}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9e701995020ea74f812c58693efd70e, type: 2}
   m_IsPrefabAsset: 0
