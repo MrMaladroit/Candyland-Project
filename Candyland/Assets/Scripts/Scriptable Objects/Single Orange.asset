@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581a2d23968db7b41970636948ffc25b, type: 3}
   m_Name: Single Orange
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 0}
+  CardFrontImage: {fileID: 21300000, guid: a56432460e6492c4b8540b5f068d4e85, type: 3}
+  CardBackImage: {fileID: 21300000, guid: 640a31269f525f44da673f64e3939704, type: 3}
   TileType: 5
   IsDouble: 0
