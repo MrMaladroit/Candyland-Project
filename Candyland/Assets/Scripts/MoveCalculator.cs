@@ -8,6 +8,7 @@ public class MoveCalculator : MonoBehaviour
     private Tile[] moveQueue;
     private PieceMover pieceMover;
     private Board board;
+    private Player player;
 
     private void Start()
     {
@@ -15,10 +16,16 @@ public class MoveCalculator : MonoBehaviour
         PieceMover.OnMoveFinished += ClearMoveQueue;
         pieceMover = GetComponent<PieceMover>();
         board = FindObjectOfType<Board>();
+        player = GetComponent<Player>();
     }
 
     private void CalculateMove(TileType tileType, int singleOrDouble)
     {
+        if(player.IsCurrentPlayer == false)
+        {
+            return;
+        }
+
         int moveCount = 0;
         Tile nextTile = pieceMover.CurrentTile.NextTile;
 

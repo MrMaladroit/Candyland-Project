@@ -9,18 +9,20 @@ public class Player : MonoBehaviour
 
     private bool isCurrentPlayer = false;
     private PieceMover pieceMover;
+    private MoveCalculator moveCalculator;
 
     private void Start()
     {
         PlayerCount++;
         pieceMover = GetComponent<PieceMover>();
+        moveCalculator = GetComponent<MoveCalculator>();    
         pieceMover.enabled = false;
-        PieceMover.OnMoveFinished += SetPieceMoverActivity;
     }
 
-    private void SetPieceMoverActivity()
+    private void Update()
     {
-        pieceMover.enabled = isCurrentPlayer;
+        pieceMover.enabled = IsCurrentPlayer;
+        moveCalculator.enabled = IsCurrentPlayer;
     }
 
 

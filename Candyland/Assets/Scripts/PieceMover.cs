@@ -15,16 +15,23 @@ public class PieceMover : MonoBehaviour
     private MoveCalculator moveCalculator;
     private bool isMoving = false;
     private Vector2 velocity;
+    private Player player;
 
     private void Start()
     {        
         MoveCalculator.MoveCalculated += HandleMove;
         transform.position = currentTile.transform.position;
         moveCalculator = GetComponent<MoveCalculator>();
+        player = GetComponent<Player>();
     }
 
     private void HandleMove(Tile[] moveQueue)
     {
+        if (player.IsCurrentPlayer == false)
+        {
+            return;
+        }
+
         if(isMoving != true)
         {
             StartCoroutine(MovePiece(moveQueue));
