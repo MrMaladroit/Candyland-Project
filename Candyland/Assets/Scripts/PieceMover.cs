@@ -5,6 +5,7 @@ using System.Collections;
 public class PieceMover : MonoBehaviour
 {
     public static Action OnMoveFinished;
+    public static Action OnTurnEnd;
     public Tile CurrentTile { get { return currentTile; } private set { currentTile = value; } }
 
     [SerializeField] float smoothTime = 0.2f;
@@ -62,6 +63,11 @@ public class PieceMover : MonoBehaviour
             moveQueue = finalTile.shortcutRoute;
             HandleMove(moveQueue);
         }
+        else
+        {
+            OnTurnEnd();
+        }
+
         OnMoveFinished();
     }
 }

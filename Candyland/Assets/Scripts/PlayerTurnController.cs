@@ -7,7 +7,7 @@ public class PlayerTurnController : MonoBehaviour
         
     private void Start()
     {
-        PieceMover.OnMoveFinished += PassTurn;
+        PieceMover.OnTurnEnd += PassTurn;
         players[0].IsCurrentPlayer = true;
     }
 
