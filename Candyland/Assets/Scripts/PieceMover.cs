@@ -4,7 +4,6 @@ using System.Collections;
 
 public class PieceMover : MonoBehaviour
 {
-    public static Action OnMoveFinished;
     public static Action OnTurnEnd;
     public Tile CurrentTile { get { return currentTile; } private set { currentTile = value; } }
 

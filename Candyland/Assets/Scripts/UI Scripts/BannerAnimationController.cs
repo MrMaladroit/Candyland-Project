@@ -7,6 +7,7 @@ public class BannerAnimationController : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        PieceMover.OnTurnEnd += Play;
     }
 
     public void Play()
