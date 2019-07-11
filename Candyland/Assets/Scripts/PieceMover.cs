@@ -67,8 +67,6 @@ public class PieceMover : MonoBehaviour
         {
             OnTurnEnd();
         }
-
-        OnMoveFinished();
     }
 }
 
