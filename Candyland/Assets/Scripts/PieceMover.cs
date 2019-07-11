@@ -44,7 +44,7 @@ public class PieceMover : MonoBehaviour
         Tile finalTile = moveQueue[moveQueue.Length - 1];
         while (currentTile != finalTile)
         {
-            if(Vector2.Distance(transform.position, currentTile.NextTile.transform.position) < 0.01f)
+            if (Vector2.Distance(transform.position, currentTile.NextTile.transform.position) < 0.01f)
             {
                 currentTile = currentTile.NextTile;
             }

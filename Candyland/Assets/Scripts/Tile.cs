@@ -21,7 +21,7 @@ public class Tile : MonoBehaviour
         board = FindObjectOfType<Board>();
 
         int index = Array.IndexOf(board.boardTiles, this);
-        if (tileType != TileType.Shortcut)
+        if (tileType != TileType.Shortcut && tileType != TileType.Start)
         {
             if(board.boardTiles[index].tileType != TileType.End)
             {

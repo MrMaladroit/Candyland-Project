@@ -12,6 +12,6 @@ public class BannerAnimationController : MonoBehaviour
 
     public void Play()
     {
-        animator.Play("ScrollWithBounce");
+        animator.Play("ScrollWithPause");
     }
 }
