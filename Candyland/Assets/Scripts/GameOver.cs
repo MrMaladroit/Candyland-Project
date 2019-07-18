@@ -21,7 +21,5 @@ public class GameOver : MonoBehaviour
     {
         playerText.text = player.gameObject.name + " Wins!";
         gameOverPanel.gameObject.SetActive(true);
-
-        Debug.Log("HandleGameOver Finished Resolving");
     }
 }

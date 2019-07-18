@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
         pieceMover.enabled = false;
     }
 
+    private void OnDisable()
+    {
+        PlayerCount = 0;
+    }
+
     private void Update()
     {
         pieceMover.enabled = IsCurrentPlayer;

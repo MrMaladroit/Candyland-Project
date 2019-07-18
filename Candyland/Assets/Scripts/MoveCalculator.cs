@@ -12,7 +12,6 @@ public class MoveCalculator : MonoBehaviour
 
     private void Start()
     {      
-        PieceMover.OnTurnEnd += ClearMoveQueue;
         pieceMover = GetComponent<PieceMover>();
         board = FindObjectOfType<Board>();
         player = GetComponent<Player>();
@@ -20,24 +19,28 @@ public class MoveCalculator : MonoBehaviour
 
     private void OnEnable()
     {
-        SpinnerController.OnSpinnerResults += CalculateMove;
+        Deck.DrawnCard += CalculateMove;
+        PieceMover.OnTurnEnd += ClearMoveQueue;
     }
     private void OnDisable()
     {
-        SpinnerController.OnSpinnerResults -= CalculateMove;
+        Deck.DrawnCard -= CalculateMove;
+        PieceMover.OnTurnEnd -= ClearMoveQueue;
     }
 
-    private void CalculateMove(TileType tileType, int singleOrDouble)
+    private void CalculateMove(TileType tileType, bool isDouble)
     {
         if(player.IsCurrentPlayer == false)
         {
             return;
         }
 
+        int isDoubleAsInt = isDouble == true ? 2 : 1;
+
         int moveCount = 0;
         Tile nextTile = pieceMover.CurrentTile.NextTile;
 
-        for (int i = 0; i < singleOrDouble;)
+        for (int i = 0; i < isDoubleAsInt;)
         {
             moveCount++;
 
