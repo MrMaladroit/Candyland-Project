@@ -5,6 +5,8 @@ using System.Collections;
 public class PieceMover : MonoBehaviour
 {
     public static Action OnTurnEnd;
+    public static Action<Player> OnEndReached;
+
     public Tile CurrentTile { get { return currentTile; } private set { currentTile = value; } }
 
     [SerializeField] float smoothTime = 0.2f;
@@ -16,6 +18,7 @@ public class PieceMover : MonoBehaviour
     private bool isMoving = false;
     private Vector2 velocity;
     private Player player;
+    private static bool isGameOver = false;
 
     private void Start()
     {        
@@ -27,7 +30,7 @@ public class PieceMover : MonoBehaviour
 
     private void HandleMove(Tile[] moveQueue)
     {
-        if (player.IsCurrentPlayer == false)
+        if (player.IsCurrentPlayer == false || isGameOver == true)
         {
             return;
         }
@@ -49,20 +52,29 @@ public class PieceMover : MonoBehaviour
                 currentTile = currentTile.NextTile;
             }
 
-            transform.position = Vector2.SmoothDamp(transform.position, currentTile.NextTile.transform.position, ref velocity, smoothTime);
+            if(currentTile.tileType != TileType.End)
+            {
+                transform.position = Vector2.SmoothDamp(transform.position, currentTile.NextTile.transform.position, ref velocity, smoothTime);
+            }
+            else
+            {
+                isGameOver = true;
+                OnEndReached(player);
+            }
+
             yield return null;
         }
 
         isMoving = false;
 
-        if(finalTile.HasSpecialAction)
+        if(finalTile.HasSpecialAction && isGameOver != true)
         {
             currentTile = currentTile.SecondaryNextTile;
             moveCalculator.ClearMoveQueue();
             moveQueue = finalTile.shortcutRoute;
             HandleMove(moveQueue);
         }
-        else
+        else if(isGameOver != true)
         {
             OnTurnEnd();
         }
