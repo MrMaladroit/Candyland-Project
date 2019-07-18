@@ -12,6 +12,11 @@ public class GameOver : MonoBehaviour
         PieceMover.OnEndReached += HandleGameOver;
     }
 
+    private void OnDisable()
+    {
+        PieceMover.OnEndReached -= HandleGameOver;
+    }
+
     private void HandleGameOver(Player player)
     {
         playerText.text = player.gameObject.name + " Wins!";

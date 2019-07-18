@@ -8,10 +8,19 @@ public class PlayerTurnController : MonoBehaviour
 
     private void Start()
     {
-        PieceMover.OnTurnEnd += PassTurn;
         players[0].IsCurrentPlayer = true;
         bannerTextController = FindObjectOfType<BannerTextController>();
         bannerTextController.SetText("Player 1's Turn");
+    }
+
+    private void OnEnable()
+    {
+        PieceMover.OnTurnEnd += PassTurn;
+    }
+
+    private void OnDisable()
+    {
+        PieceMover.OnTurnEnd -= PassTurn;
     }
 
     private void PassTurn()

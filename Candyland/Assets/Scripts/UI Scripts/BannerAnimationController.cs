@@ -11,6 +11,11 @@ public class BannerAnimationController : MonoBehaviour
         Play();
     }
 
+    private void OnDisable()
+    {
+        PieceMover.OnTurnEnd -= Play;
+    }
+
     public void Play()
     {
         animator.Play("ScrollWithPause");

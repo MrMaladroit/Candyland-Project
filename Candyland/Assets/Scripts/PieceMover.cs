@@ -22,10 +22,20 @@ public class PieceMover : MonoBehaviour
 
     private void Start()
     {        
-        MoveCalculator.MoveCalculated += HandleMove;
         transform.position = currentTile.transform.position;
         moveCalculator = GetComponent<MoveCalculator>();
         player = GetComponent<Player>();
+        isGameOver = false;
+    }
+
+    private void OnEnable()
+    {
+        MoveCalculator.MoveCalculated += HandleMove;
+    }
+
+    private void OnDisable()
+    {
+        MoveCalculator.MoveCalculated -= HandleMove;
     }
 
     private void HandleMove(Tile[] moveQueue)

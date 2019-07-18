@@ -11,12 +11,20 @@ public class MoveCalculator : MonoBehaviour
     private Player player;
 
     private void Start()
-    {
-        SpinnerController.OnSpinnerResults += CalculateMove;
+    {      
         PieceMover.OnTurnEnd += ClearMoveQueue;
         pieceMover = GetComponent<PieceMover>();
         board = FindObjectOfType<Board>();
         player = GetComponent<Player>();
+    }
+
+    private void OnEnable()
+    {
+        SpinnerController.OnSpinnerResults += CalculateMove;
+    }
+    private void OnDisable()
+    {
+        SpinnerController.OnSpinnerResults -= CalculateMove;
     }
 
     private void CalculateMove(TileType tileType, int singleOrDouble)
